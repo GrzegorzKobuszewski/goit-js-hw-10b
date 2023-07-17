@@ -1,9 +1,9 @@
-//import './css/styles.css';
 import axios from 'axios';
 import { fetchBreeds, fetchCatByBreed } from './cat-api.js';
 import SlimSelect from 'slim-select';
 import '../node_modules/slim-select/dist/slimselect.css';
 import Notiflix from 'notiflix';
+import './css/styles.css';
 
 Notiflix.Notify.init({
     width: '450px',

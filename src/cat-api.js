@@ -1,14 +1,16 @@
-function fetchBreeds() {
+import axios from 'axios';
+
+export function fetchBreeds() {
     return axios
         .get('https://api.thecatapi.com/v1/breeds')
         .then(response => response.data)
         .catch(error => {
-            console.error('Wystąpił błąd podczas pobierania kolekcji ras:', error);
+            console.error('Wystąpił błąd podczas pobierania listy ras kotów:', error);
             throw error;
         });
 }
 
-function fetchCatByBreed(breedId) {
+export function fetchCatByBreed(breedId) {
     return axios
         .get(`https://api.thecatapi.com/v1/images/search?breed_ids=${breedId}`)
         .then(response => response.data)
@@ -17,5 +19,3 @@ function fetchCatByBreed(breedId) {
             throw error;
         });
 }
-
-export { fetchBreeds, fetchCatByBreed };

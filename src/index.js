@@ -1,7 +1,17 @@
-import './css/styles.css';
+//import './css/styles.css';
 import axios from 'axios';
-import SlimSelect from 'slim-select';
 import { fetchBreeds, fetchCatByBreed } from './cat-api.js';
+import SlimSelect from 'slim-select';
+// import '../node_modules/slim-select/dist/slimselect.css';
+import Notiflix from 'notiflix';
+
+Notiflix.Notify.init({
+    width: '400px',
+    position: 'center-top',
+    distance: '10px',
+    opacity: 1,
+    borderRadius: '2px',
+});
 
 // Nagłówek z kluczem API pobranym z https://thecatapi.com/
 axios.defaults.headers.common['x-api-key'] = 'live_HW6ofgOXa1PHtoKKnRiH5QkMbqGs1Q4XiOBGyYr7i9wc25Sb6dIhoeXcLEhFmO7A';
@@ -11,7 +21,91 @@ axios.defaults.headers.common['x-api-key'] = 'live_HW6ofgOXa1PHtoKKnRiH5QkMbqGs1
 // https://cssloaders.github.io/
 // https://slimselectjs.com/
 
+const breedSelect = document.querySelector('.breed-select');
+const loader = document.querySelector('.loader');
+const error = document.querySelector('.error');
+const catInfo = document.querySelector('.cat-info');
+
+// Dodanie nasłuchiwania na zdarzenie zmiany dla select
+breedSelect.addEventListener('change', selectCat);
 
 
 
+// Funkcja obsługująca zmianę rasy kota
+function selectCat(e) {
+    const breedId = e.target.value;
+    if (breedId) {
+        loader.style.display = 'block';
+        fetchCat(breedId);
+    } else {
+        loader.style.display = 'none';
+    }
+}
 
+// Funkcja wykonująca żądanie informacji o kocie
+function fetchCat(breedId) {
+    fetchCatByBreed(breedId)
+        .then(response => {
+            const catItemInfo = response;
+            showCat(catItemInfo);
+        })
+        .catch(error => {
+            Notiflix.Notify.failure(
+                'Upps! Coś poszło nie tak. Odśwież stronę...'
+            );
+            return error;
+        })
+        .finally(() => {
+            loader.style.display = 'none';
+        });
+}
+
+// Funkcja wyświetlająca informacje o kocie
+function showCat(catItemInfo) {
+    const { name, description, temperament } = catItemInfo[0].breeds[0];
+    const { url } = catItemInfo[0];
+    const catInfoHTML = `
+        <img class="postImage" src="${url}" alt="">
+        <div class="postWrapper">
+            <h2 class="postTitle">${name}</h2>
+            <p><strong>Description:</strong> ${description}</p>
+            <p><strong>Temperament:</strong> ${temperament}</p>
+        </div>
+        `;
+    catInfo.innerHTML = catInfoHTML;
+    catInfo.style.display = 'block';
+}
+
+// Inicjalizacja aplikacji - pobranie listy ras kota
+function initCatApp() {
+    loader.style.display = 'block';
+    fetchBreeds()
+        .then(breeds => {
+            fillCatList(breeds);
+            const select = new SlimSelect({
+                select: '.breed-select',
+            });
+            Notiflix.Notify.info('Wybierz rasę z listy, żeby wyświetlić więcej informacji o kocie.');
+        })
+        .catch(error => {
+            console.error(error);
+        })
+        .finally(() => {
+            loader.style.display = 'none';
+        });
+}
+
+// Funkcja wypełniająca select opcjami ras kotów
+function fillCatList(breeds) {
+    breeds.forEach(breed => {
+    const option = document.createElement('option');
+    option.value = breed.id;
+    option.textContent = breed.name;
+    breedSelect.appendChild(option);
+    });
+}
+
+// Inicjalizacja aplikacji po załadowaniu strony
+document.addEventListener('DOMContentLoaded', () => {
+    initCatApp();
+});

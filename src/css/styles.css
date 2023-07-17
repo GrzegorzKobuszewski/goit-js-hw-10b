@@ -1,3 +1,5 @@
+
+/*
 * {
     box-sizing: border-box;
 }
@@ -16,53 +18,49 @@ body {
 #breed-select {
     font: inherit;
     padding: 10px;
-    max-width: 320px;
     margin-bottom: 20px;
-    font-size: 20px;
-    margin-left: 60px;
-    margin-top: 40px;
+    font-size: 30px;
 }
 
 #breed-select:focus,
 #breed-select:target {
     box-shadow: 5px 5px 2px 2px rgba(0, 0, 0, 0.3);
 }
+*/
 
-.error,
-.loader {
-    line-height: 1;
+body {
+    font-size: 24px;
 }
 
 .breed-select {
-    list-style: none;
-    margin-left: 20px;
-    padding-bottom: 20px;
-    font-size: 24px;
-    font-weight: 700;
-    line-height: 1;
+    margin-bottom: 20px;
+    width: 300px !important;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+}
+
+.postImage {
+    padding-right: 20px;
+    max-width: 400px;
+    max-height: 400px;
+}
+
+.postWrapper {
+    display: inline-block;
+}
+
+.postWrapper p {
+    max-width: 600px;
+    max-height: 400px;
 }
 
 
 
-@keyframes animation {
-    0% {
-        transform: scale(0.9);
-    }
-
-    100% {
-        transform: scale(1);
-    }
-}
-
-
-section {
-    animation: animation 250ms;
-}
-
+/*
 .postImage img {
     margin-right: 30px;
-    /* ramka do flagi */
-    /*border: solid 2px;*/
+    // ramka do flagi 
+    //border: solid 2px;
 }
 
 .postTitle {
@@ -70,3 +68,5 @@ section {
     align-items: center;
     margin-left: 40px;
 }
+
+*/

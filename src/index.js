@@ -7,12 +7,12 @@ import Notiflix from 'notiflix';
 import './css/styles.css';
 
 Notiflix.Notify.init({
-    width: '450px',
+    width: '700px',
     position: 'center-top',
     distance: '20px',
     opacity: 1,
     borderRadius: '10px',
-    timeout: 2000,
+    timeout: 3000,
 
     ID: 'NotiflixNotify',
         fontSize: '20px',

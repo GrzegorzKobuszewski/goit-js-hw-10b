@@ -33,16 +33,16 @@ body {
 }
 
 .breed-select {
-    margin-bottom: 20px;
-    width: 300px !important;
+    margin-bottom: 30px;
+    width: 300px;
     overflow-y: auto;
     scroll-behavior: smooth;
 }
 
 .postImage {
-    padding-right: 20px;
-    max-width: 400px;
-    max-height: 400px;
+    padding-right: 30px;
+    max-width: 300px;
+    max-height: 300px;
 }
 
 .postWrapper {
@@ -50,8 +50,7 @@ body {
 }
 
 .postWrapper p {
-    max-width: 600px;
-    max-height: 400px;
+    max-width: 900px;
 }
 
 

@@ -29,7 +29,7 @@ const catInfo = document.querySelector('.cat-info');
 // Dodanie nasłuchiwania na zdarzenie zmiany dla select
 breedSelect.addEventListener('change', selectCat);
 
-
+error.style.display = 'none';
 
 // Funkcja obsługująca zmianę rasy kota
 function selectCat(e) {

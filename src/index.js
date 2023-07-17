@@ -14,6 +14,9 @@ Notiflix.Notify.init({
     borderRadius: '10px',
     timeout: 2000,
 
+    ID: 'NotiflixNotify',
+        fontSize: '20px',
+
     info: {
         background: '#26c0d3',
         textColor: '#fff',
@@ -22,7 +25,6 @@ Notiflix.Notify.init({
         fontAwesomeClassName: 'fas fa-info-circle',
         fontAwesomeIconColor: 'rgba(0,0,0,0.2)',
         backOverlayColor: 'rgba(38,192,211,0.2)',
-        fontAwesomeIconSize: '60px',
     },
 });
 

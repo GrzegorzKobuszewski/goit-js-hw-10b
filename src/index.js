@@ -2,13 +2,13 @@
 import axios from 'axios';
 import { fetchBreeds, fetchCatByBreed } from './cat-api.js';
 import SlimSelect from 'slim-select';
-//import '../node_modules/slim-select/dist/slimselect.css';
+import '../node_modules/slim-select/dist/slimselect.css';
 import Notiflix from 'notiflix';
 
 Notiflix.Notify.init({
-    width: '500px',
+    width: '450px',
     position: 'center-top',
-    distance: '10px',
+    distance: '20px',
     opacity: 1,
     borderRadius: '10px',
 });

@@ -13,9 +13,7 @@ Notiflix.Notify.init({
     opacity: 1,
     borderRadius: '10px',
     timeout: 3000,
-
-    ID: 'NotiflixNotify',
-        fontSize: '20px',
+    fontSize: '20px',
 });
 
 // Nagłówek z kluczem API pobranym z https://thecatapi.com/

@@ -3,6 +3,7 @@ import { fetchBreeds, fetchCatByBreed } from './cat-api.js';
 import SlimSelect from 'slim-select';
 import '../node_modules/slim-select/dist/slimselect.css';
 import Notiflix from 'notiflix';
+
 import './css/styles.css';
 
 Notiflix.Notify.init({
@@ -11,6 +12,18 @@ Notiflix.Notify.init({
     distance: '20px',
     opacity: 1,
     borderRadius: '10px',
+    timeout: 2000,
+
+    info: {
+        background: '#26c0d3',
+        textColor: '#fff',
+        childClassName: 'notiflix-notify-info',
+        notiflixIconColor: 'rgba(0,0,0,0.2)',
+        fontAwesomeClassName: 'fas fa-info-circle',
+        fontAwesomeIconColor: 'rgba(0,0,0,0.2)',
+        backOverlayColor: 'rgba(38,192,211,0.2)',
+        fontAwesomeIconSize: '34px',
+    },
 });
 
 // Nagłówek z kluczem API pobranym z https://thecatapi.com/

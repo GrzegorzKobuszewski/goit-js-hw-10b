@@ -10,9 +10,8 @@ Notiflix.Notify.init({
     width: '620px',
     position: 'center-top',
     distance: '20px',
-    opacity: 1,
-    borderRadius: '10px',
-    timeout: 3000,
+    borderRadius: '12px',
+    timeout: 3600,
     fontSize: '20px',
 });
 

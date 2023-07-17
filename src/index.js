@@ -22,7 +22,7 @@ Notiflix.Notify.init({
         fontAwesomeClassName: 'fas fa-info-circle',
         fontAwesomeIconColor: 'rgba(0,0,0,0.2)',
         backOverlayColor: 'rgba(38,192,211,0.2)',
-        fontAwesomeIconSize: '34px',
+        fontAwesomeIconSize: '60px',
     },
 });
 

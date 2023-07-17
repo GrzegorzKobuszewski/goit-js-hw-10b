@@ -34,15 +34,15 @@ body {
 
 .breed-select {
     margin-bottom: 30px;
-    width: 300px;
+    width: 400px !important;
     overflow-y: auto;
     scroll-behavior: smooth;
 }
 
 .postImage {
     padding-right: 30px;
-    max-width: 300px;
-    max-height: 300px;
+    max-width: 400px;
+    max-height: 400px;
 }
 
 .postWrapper {
@@ -50,7 +50,7 @@ body {
 }
 
 .postWrapper p {
-    max-width: 900px;
+    max-width: 800px;
 }
 
 

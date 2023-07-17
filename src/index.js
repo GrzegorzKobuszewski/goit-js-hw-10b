@@ -7,7 +7,7 @@ import Notiflix from 'notiflix';
 import './css/styles.css';
 
 Notiflix.Notify.init({
-    width: '700px',
+    width: '600px',
     position: 'center-top',
     distance: '20px',
     opacity: 1,
@@ -16,16 +16,6 @@ Notiflix.Notify.init({
 
     ID: 'NotiflixNotify',
         fontSize: '20px',
-
-    info: {
-        background: '#26c0d3',
-        textColor: '#fff',
-        childClassName: 'notiflix-notify-info',
-        notiflixIconColor: 'rgba(0,0,0,0.2)',
-        fontAwesomeClassName: 'fas fa-info-circle',
-        fontAwesomeIconColor: 'rgba(0,0,0,0.2)',
-        backOverlayColor: 'rgba(38,192,211,0.2)',
-    },
 });
 
 // Nagłówek z kluczem API pobranym z https://thecatapi.com/
